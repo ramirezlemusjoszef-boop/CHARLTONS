@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1020">
+<title>Charlton&#39;s Security Services</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Charlton&#39;s Security Services. 24-hour locksmith across Grand Bahama, East End to West End. Lockouts, auto rekey, lock changes and repairs, commercial and industrial. Call or WhatsApp 242-559-5201.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap">
+<style>
+/* Layout: a 24-hour locksmith, so the page lives at night. The signature is a live Grand Bahama clock
+   that always ends in the same answer: still open. A key-cut edge separates sections, and the
+   lockout picker writes the WhatsApp message for him. Single dark theme on purpose: porch light on a dark street. */
+:root{
+  --night:#0A1020;       /* street at 2am */
+  --night-2:#111A30;
+  --night-3:#18233F;
+  --line:rgba(226,232,255,.12);
+  --ink:#EEF1FA;
+  --muted:#9AA3BD;
+  --amber:#FFB21E;       /* porch light */
+  --amber-hi:#FFD27A;
+  --amber-ink:#2A1A00;
+  --go:#3BE38A;
+  --wa:#1FAF5A;
+  --display:'Bricolage Grotesque','Segoe UI',Helvetica,Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  --pad:18px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--display);font-size:16.5px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
+
+.ribbon{background:var(--amber);color:var(--amber-ink);text-align:center;padding:8px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+header.top{position:sticky;top:0;z-index:40;background:rgba(10,16,32,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand .mark{width:40px;height:40px;border-radius:11px;background:var(--amber);display:grid;place-items:center;flex:none}
+.brand .mark svg{width:24px;height:24px}
+.brand b{font-weight:800;font-size:18px;letter-spacing:-.01em;white-space:nowrap}
+.brand small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.hcall{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;background:var(--ink);color:var(--night);text-decoration:none;font-weight:800;font-size:15px;flex:none}
+.hcall svg{width:17px;height:17px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:58px;padding:0 24px;border-radius:16px;font-weight:800;font-size:17.5px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,filter .15s}
+.btn svg{width:21px;height:21px;flex:none}
+.btn:active{transform:translateY(1px)}
+.btn-amber{background:var(--amber);color:var(--amber-ink);box-shadow:0 0 0 0 rgba(255,178,30,.5),0 14px 34px -14px rgba(255,178,30,.8)}
+.btn-amber:hover{filter:brightness(1.06)}
+.btn-line{background:transparent;color:var(--ink);border:1.5px solid rgba(238,241,250,.35)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-wa{background:var(--wa);color:#fff}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:34px 0 48px}
+.hero::before{content:"";position:absolute;right:-30%;top:-20%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,178,30,.22),rgba(255,178,30,0) 65%);pointer-events:none}
+.clock{position:relative;display:inline-flex;align-items:center;gap:12px;background:var(--night-2);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.clock i{width:9px;height:9px;border-radius:50%;background:var(--go);box-shadow:0 0 12px var(--go);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.clock .t{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.04em}
+.clock .clk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--go)}
+.hero h1{position:relative;font-weight:800;font-size:clamp(50px,14.5vw,104px);line-height:.9;letter-spacing:-.035em;margin:20px 0 0}
+.hero h1 span{color:var(--amber)}
+.lede{position:relative;font-size:18.5px;color:#C9D0E4;margin:18px 0 0;max-width:34ch}
+.lede b{color:var(--ink)}
+.acts{position:relative;display:grid;gap:10px;margin-top:26px}
+
+/* big time card */
+.night-card{position:relative;margin-top:34px;border-radius:22px;background:linear-gradient(160deg,var(--night-3),var(--night-2));border:1px solid var(--line);padding:22px 20px 20px;overflow:hidden}
+.night-card .mono{color:var(--muted)}
+.bigtime{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:-.04em;font-size:clamp(54px,16vw,92px);line-height:1;letter-spacing:-.02em;margin-top:10px}
+.bigtime small{font-family:var(--mono);font-weight:500;font-size:.3em;color:var(--muted);margin-left:8px;letter-spacing:.06em}
+.verdict{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:800;font-size:22px}
+.verdict svg{width:26px;height:26px;color:var(--go)}
+.note{color:var(--muted);font-size:15px;margin:6px 0 0}
+.keyline{position:absolute;left:0;right:0;bottom:0;height:16px;opacity:.9}
+
+/* key-cut divider */
+.cut{display:block;width:100%;height:22px;color:var(--night-2)}
+
+/* strip */
+.strip{background:var(--night-2)}
+.strip .wrap{display:grid;grid-template-columns:1fr 1fr}
+.fact{padding:18px 12px 18px 0;border-bottom:1px solid var(--line)}
+.fact:nth-child(odd){border-right:1px solid var(--line)}
+.fact:nth-child(even){padding-left:14px}
+.fact span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fact b{display:block;font-weight:800;font-size:18px;margin-top:3px;line-height:1.2}
+.fact b.a{color:var(--amber)}
+
+section{padding:64px 0}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+h2{font-weight:800;font-size:clamp(38px,10vw,66px);line-height:.95;letter-spacing:-.03em;margin:10px 0 0}
+.sub{color:#C9D0E4;font-size:17.5px;margin:14px 0 0;max-width:44ch}
+
+/* picker */
+.picker{margin-top:28px;background:var(--night-2);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.step{padding:20px 18px;border-bottom:1px solid var(--line)}
+.step h3{margin:0 0 12px;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opts button{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:96px;padding:14px;border-radius:14px;border:1.5px solid var(--line);background:var(--night-3);cursor:pointer;text-align:left;font-weight:800;font-size:16px;line-height:1.15;transition:border-color .15s,background .15s}
+.opts button svg{width:28px;height:28px;color:var(--muted)}
+.opts button small{display:block;font-weight:500;font-size:12.5px;color:var(--muted);margin-top:3px}
+.opts button[aria-pressed="true"]{border-color:var(--amber);background:rgba(255,178,30,.1)}
+.opts button[aria-pressed="true"] svg{color:var(--amber)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--night-3);cursor:pointer;font-weight:700;font-size:15px}
+.chips button[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
+.field{display:block;margin-top:12px}
+.field span{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:6px}
+.field input{width:100%;height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--night-3);color:var(--ink);padding:0 14px;font:inherit;font-size:16px}
+.field input::placeholder{color:#6B7491}
+.field input:focus{outline:none;border-color:var(--amber)}
+.out{padding:20px 18px;background:rgba(255,178,30,.06)}
+.out .mono{color:var(--muted)}
+.bubble{margin-top:10px;background:#DCF8C6;color:#102010;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:15px;line-height:1.45;white-space:pre-line}
+.out .btn{width:100%;margin-top:14px}
+.out .tip{font-size:13px;color:var(--muted);margin:10px 0 0}
+
+/* services */
+.svc{display:grid;gap:10px;margin-top:28px}
+.s{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:18px;background:var(--night-2);border:1px solid var(--line)}
+.s .ic{width:46px;height:46px;border-radius:12px;background:var(--night-3);color:var(--amber);display:grid;place-items:center;flex:none}
+.s .ic svg{width:24px;height:24px}
+.s h3{margin:0;font-weight:800;font-size:19px}
+.s p{margin:4px 0 0;color:var(--muted);font-size:15px}
+
+/* steps */
+.how{display:grid;gap:10px;margin-top:28px}
+.h{padding:20px;border-radius:18px;border:1px solid var(--line);position:relative}
+.h .n{font-family:var(--mono);font-size:12px;color:var(--amber)}
+.h h3{margin:6px 0 4px;font-weight:800;font-size:21px}
+.h p{margin:0;color:var(--muted);font-size:15px}
+
+/* review */
+.review{background:var(--amber);color:var(--amber-ink);padding:64px 0}
+.review .kicker{color:var(--amber-ink);opacity:.7}
+.review blockquote{margin:14px 0 0;font-weight:800;font-size:clamp(34px,9.5vw,64px);line-height:1;letter-spacing:-.03em}
+.review cite{display:flex;align-items:center;gap:10px;margin-top:20px;font-style:normal;font-size:15px;font-weight:600}
+.review cite i{width:38px;height:38px;border-radius:50%;background:var(--amber-ink);color:var(--amber);display:grid;place-items:center;font-style:normal;font-weight:800}
+.stars{display:flex;gap:3px;margin-top:16px}
+.stars svg{width:22px;height:22px}
+
+.final{padding:70px 0 76px;text-align:left}
+.final h2{font-size:clamp(46px,13vw,92px)}
+.final .acts{max-width:460px}
+
+footer{border-top:1px solid var(--line);color:var(--muted);padding:28px 0 110px;font-size:14px}
+footer b{color:var(--ink)}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1.3fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(10,16,32,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+.sticky.on{transform:none}
+.sticky .btn{height:52px;font-size:16px;padding:0 10px}
+
+.rise{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:400px){.hcall span{display:none}.hcall{width:46px;height:46px;padding:0;justify-content:center;background:var(--amber);color:var(--amber-ink)}.hcall svg{width:20px;height:20px}}
+@media (min-width:720px){
+  .acts{grid-template-columns:auto auto;justify-content:start}
+  .strip .wrap{grid-template-columns:repeat(4,1fr)}
+  .fact,.fact:nth-child(odd),.fact:nth-child(even){padding:20px 16px;border-bottom:0;border-right:1px solid var(--line)}
+  .fact:first-child{padding-left:0}.fact:last-child{border-right:0}
+  .svc{grid-template-columns:1fr 1fr}
+  .how{grid-template-columns:repeat(3,1fr)}
+  .opts{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:980px){
+  :root{--pad:40px}
+  .hero{padding:64px 0 80px}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .night-card{margin-top:0;padding:30px 28px 28px}
+  section,.review{padding:96px 0}
+  .pgrid{display:grid;grid-template-columns:1.2fr .8fr}
+  .pgrid .left{border-right:1px solid var(--line)}
+  .out{padding:28px 26px;display:flex;flex-direction:column;justify-content:center}
+  .step{padding:24px 26px}
+  .sticky{display:none}
+  footer{padding-bottom:36px}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Preview made for Charlton&#39;s Security Services · Grand Bahama</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Charlton's Security Services home">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#2A1A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M17 12v3M20 12v2.5"/></svg></span>
+      <span><b>Charlton&#39;s Security</b><small>24-hour locksmith · Grand Bahama</small></span>
+    </a>
+    <a class="hcall" href="tel:+12425595201" aria-label="Call 242-559-5201">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      <span>242-559-5201</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-top:34px">
+  <div class="wrap">
+    <div>
+      <div class="clock"><i></i><span class="t" id="clock-small">Grand Bahama</span><span class="clk">Open now</span></div>
+      <h1>Locked out?<br><span>I'm awake.</span></h1>
+      <p class="lede">Lockouts, auto rekeys, lock changes and repairs. Homes, cars, commercial and industrial, <b>from East End to West End</b>. Day or night, call and I'll come to you.</p>
+      <div class="acts">
+        <a class="btn btn-amber" href="tel:+12425595201">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Call now · 242-559-5201
+        </a>
+        <a class="btn btn-line" href="#help">Send my location</a>
+      </div>
+    </div>
+
+    <div class="night-card rise" aria-live="polite">
+      <div class="mono">Right now in Grand Bahama</div>
+      <div class="bigtime" id="bigtime">--:--<small>AM</small></div>
+      <div class="verdict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg><span id="verdict">Still open.</span></div>
+      <p class="note" id="note">Open 24 hours, 7 days. Doesn't matter what time it is.</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="fact"><span>Hours</span><b class="a">24 / 7</b></div>
+    <div class="fact"><span>Covers</span><b>East End to West End</b></div>
+    <div class="fact"><span>Works on</span><b>Auto, home, commercial</b></div>
+    <div class="fact"><span>Google rating</span><b class="a">★★★★★ 5.0</b></div>
+  </div>
+</div>
+
+<section id="help">
+  <div class="wrap">
+    <div class="kicker rise">Get help fast</div>
+    <h2 class="rise">Tell me what<br>happened.</h2>
+    <p class="sub rise">Two taps and your message is ready. It goes straight to my WhatsApp with where you are.</p>
+
+    <div class="picker rise">
+      <div class="pgrid">
+        <div class="left">
+          <div class="step">
+            <h3>1 · What do you need?</h3>
+            <div class="opts" id="need" role="group" aria-label="What do you need">
+              <button type="button" data-v="Locked out of my car" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M5 12h14"/><circle cx="8" cy="17" r="1.8"/><circle cx="16" cy="17" r="1.8"/></svg><span>Car lockout<small>Keys inside</small></span></button>
+              <button type="button" data-v="Locked out of my home or business" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Home / business<small>Can't get in</small></span></button>
+              <button type="button" data-v="Need my car rekeyed" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M17 12v3M20 12v2.5"/></svg><span>Auto rekey<small>Lost or stolen key</small></span></button>
+              <button type="button" data-v="Need a lock repaired" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg><span>Lock repair<small>Sticking or broken</small></span></button>
+              <button type="button" data-v="Need my locks changed or rekeyed" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Change / rekey<small>New home, lost keys</small></span></button>
+              <button type="button" data-v="Commercial / industrial job" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg><span>Commercial<small>Shops, offices, industrial</small></span></button>
+            </div>
+          </div>
+          <div class="step" style="border-bottom:0">
+            <h3>2 · Where are you?</h3>
+            <div class="chips" id="area" role="group" aria-label="Area">
+              <button type="button" aria-pressed="true">Freeport</button>
+              <button type="button" aria-pressed="false">Lucaya</button>
+              <button type="button" aria-pressed="false">Eight Mile Rock</button>
+              <button type="button" aria-pressed="false">West End</button>
+              <button type="button" aria-pressed="false">East End</button>
+              <button type="button" aria-pressed="false">Somewhere else</button>
+            </div>
+            <label class="field"><span>Street or landmark (optional)</span><input id="spot" type="text" placeholder="e.g. by the gas station on Queen's Hwy" autocomplete="off"></label>
+          </div>
+        </div>
+        <div class="out">
+          <div class="mono">Your message</div>
+          <div class="bubble" id="bubble"></div>
+          <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Send on WhatsApp
+          </a>
+          <p class="tip">In a hurry? Just call: <a href="tel:+12425595201">242-559-5201</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="kicker rise">What I do</div>
+    <h2 class="rise">Locks, keys,<br>lockouts.</h2>
+    <div class="svc">
+      <div class="s rise"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><path d="M5 12h14"/><circle cx="8" cy="17" r="1.8"/><circle cx="16" cy="17" r="1.8"/></svg></div><div><h3>Lockouts</h3><p>Car, home or business. Keys inside or lost, any hour. I'll get you back in without damage.</p></div></div>
+      <div class="s rise"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M17 12v3M20 12v2.5"/></svg></div><div><h3>Auto rekey</h3><p>Lost or stolen car key? Rekey the locks so the old key won't work anymore.</p></div></div>
+      <div class="s rise"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><h3>Lock changes &amp; rekeying</h3><p>New place, ex-tenant, lost keys. New locks or rekeyed ones, so only you have a way in.</p></div></div>
+      <div class="s rise"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><div><h3>Lock repairs</h3><p>Sticking, jammed or broken locks fixed, so you're not replacing what can be saved.</p></div></div>
+      <div class="s rise"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/><path d="M7 17h2M12 17h2M17 17h2"/></svg></div><div><h3>Commercial &amp; industrial</h3><p>Shops, offices, warehouses and industrial sites. Lock changes, repairs and rekeys for the whole building.</p></div></div>
+      <div class="s rise"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3>24-hour emergency</h3><p>Locked out at 3am? That's what I'm here for. East End to West End.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<svg class="cut" viewBox="0 0 400 22" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22V12L6 12L10 3L14 9L18 5L23 12L40 12L46 12L50 3L54 9L58 5L63 12L80 12L86 12L90 3L94 9L98 5L103 12L120 12L126 12L130 3L134 9L138 5L143 12L160 12L166 12L170 3L174 9L178 5L183 12L200 12L206 12L210 3L214 9L218 5L223 12L240 12L246 12L250 3L254 9L258 5L263 12L280 12L286 12L290 3L294 9L298 5L303 12L320 12L326 12L330 3L334 9L338 5L343 12L360 12L366 12L370 3L374 9L378 5L383 12L400 12L400 12V22Z" fill="currentColor"/></svg>
+<section style="background:var(--night-2);padding-top:40px">
+  <div class="wrap">
+    <div class="kicker rise">How it works</div>
+    <h2 class="rise">Back inside<br>in three steps.</h2>
+    <div class="how">
+      <div class="h rise"><div class="n">01</div><h3>Call or WhatsApp</h3><p>Tell me what happened and where you are. A landmark is enough.</p></div>
+      <div class="h rise"><div class="n">02</div><h3>I come to you</h3><p>Any hour. You'll know the price before I start.</p></div>
+      <div class="h rise"><div class="n">03</div><h3>You're back in</h3><p>Door open, key working, and you get on with your night.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="review">
+  <div class="wrap">
+    <div class="kicker rise">From a customer</div>
+    <blockquote class="rise">“This guy is awesome man! 5 star service for sure.”</blockquote>
+    <div class="stars rise" aria-label="5 stars">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+    </div>
+    <cite class="rise"><i>Z</i><span>Zoe · Google review</span></cite>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2 class="rise">Stuck outside<br><span style="color:var(--amber)">right now?</span></h2>
+    <p class="sub rise">Don't wait till morning. Call and I'm on my way.</p>
+    <div class="acts rise">
+      <a class="btn btn-amber" href="tel:+12425595201">Call 242-559-5201</a>
+      <a class="btn btn-wa" href="https://wa.me/12425595201?text=Hi%2C%20I%20need%20a%20locksmith." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+        WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><b>Charlton&#39;s Security Services</b> · 24-hour locksmith<br>Based in Eight Mile Rock · serving all of Grand Bahama, East End to West End · 242-559-5201</div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-amber" href="tel:+12425595201">Call now</a>
+  <a class="btn btn-wa" href="#help">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var PHONE='12425595201', $=function(i){return document.getElementById(i)};
+  var st={need:'Locked out of my car',area:'Freeport'};
+  function pick(g,b){g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})}
+  function render(){
+    var spot=$('spot').value.trim();
+    var msg='Hi, I need a locksmith.\n'+st.need+'.\nI\'m in '+st.area+(spot?', '+spot:'')+'.';
+    $('bubble').textContent=msg;
+    $('send').href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(msg);
+  }
+  $('need').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick(this,b);st.need=b.dataset.v;render()});
+  $('area').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick(this,b);st.area=b.textContent;render()});
+  $('spot').addEventListener('input',render);
+  render();
+
+  /* live Grand Bahama clock (America/Nassau) */
+  function tick(){
+    try{
+      var d=new Date();
+      var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/Nassau',hour:'numeric',minute:'2-digit',hour12:true}).formatToParts(d);
+      var g=function(t){var f=p.find(function(x){return x.type===t});return f?f.value:''};
+      var h=+g('hour'), m=g('minute'), ap=g('dayPeriod').toUpperCase();
+      $('bigtime').innerHTML=h+':'+m+'<small>'+ap+'</small>';
+      $('clock-small').textContent=h+':'+m+' '+ap;
+      var h24=(ap==='PM'&&h!==12)?h+12:(ap==='AM'&&h===12)?0:h;
+      var late=h24<6||h24>=22;
+      $('verdict').textContent=late?'Still open. Yes, really.':'Open now.';
+      $('note').textContent=late?'Most places closed hours ago. I didn’t. Call and I’ll come out.':'Open 24 hours, 7 days. Doesn’t matter what time it is.';
+    }catch(e){}
+  }
+  tick(); setInterval(tick,15000);
+
+  var sticky=$('sticky'),hero=document.querySelector('.hero');
+  function onS(){sticky.classList.toggle('on',hero.getBoundingClientRect().bottom<0)}
+  addEventListener('scroll',onS,{passive:true});onS();
+  var els=document.querySelectorAll('.rise');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
